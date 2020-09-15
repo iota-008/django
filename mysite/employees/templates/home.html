@@ -1,0 +1,53 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<header class = "container">
+
+    <div class="row">
+
+        <div class="col-lg-12">
+
+            <h1 class = "text-center"> Employee Database </h1>
+
+            <hr>    </hr>
+
+        </div>
+
+    </div>
+
+</header>
+
+<section. class="container">
+
+<div class="row">
+
+    <div class="col-lg-12">
+
+        <table class = "table" table-bordered>
+
+            {%for employee in employees%}
+                <tr>
+                    {% comment %} <td>{{employee.id}}</td> {% endcomment %}
+                    <td>{{employee.first_name}}</td>
+                    <td>{{employee.last_name}}</td> 
+                    {% comment %} <td>{{employee.job}}</td> {% endcomment %}
+                    <td>{{employee.email}}</td>
+                    {% comment %} <td>{{employee.gender}}</td> {% endcomment %}
+                    <td>
+                            <a class = "btn btn-primary btn-sm" href="{% url 'employee_details' employee.id%}">details</a>
+                    </td>  
+                </td>
+
+            {% endfor %}
+
+        </table>
+
+    </div>    
+
+</div>
+    
+<section/>
+
+{% endblock %}

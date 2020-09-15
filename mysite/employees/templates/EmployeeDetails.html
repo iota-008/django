@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+
+<div class="row">
+
+    <div class="col-lg-12">
+
+        <h3>{{ employee.first_name }} {{  employee.last_name }}</h3>
+
+        <p>Email ID: {{ employee.email}}</p>
+
+        <p>Phone Number: {{ employee.phone_number}}</p>
+
+        <p>Gender: {{ employee.gender}}</p>
+
+        <p>Date Of Birth: {{ employee.date_of_birth}}</p>
+
+        <p>Gender: {{ employee.gender}}</p>
+
+        <p>Address: {{ employee.address}}</p>
+
+        <p>Jobs: 
+                {%for job in employee.job.all%}
+                    <em>{{job.job_name}},</em>
+                {% endfor %}
+
+        </p>
+
+    </div>
+
+</div>
+
+</div>
+
+{% endblock content %}
